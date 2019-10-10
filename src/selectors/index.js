@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 
 export const filters = createSelector(
-    state => state.get('filters'),
+    state => state.filters,
     filters => filters
 );
 
