@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { brands, title } from '../selectors';
+import {toggleBrand} from '../actions';
 
 const filtersSelector = createSelector(
     [brands, title],
@@ -10,4 +11,4 @@ const filtersSelector = createSelector(
     })
 );
 
-export const filtersConnector = connect(filtersSelector);
+export const filtersConnector = connect(filtersSelector, { setBrand: toggleBrand });

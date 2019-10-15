@@ -1,12 +1,14 @@
 import React from 'react';
 
 export const Filters = props => {
-    console.log(props);
-
     const title = props.title;
 
+    const br = () => {
+        props.setBrand({as: '1'})
+    };
+
     return (
-        <div className='filters'>
+        <div className='filters' onClick={br}>
             {title}
         </div>
     );

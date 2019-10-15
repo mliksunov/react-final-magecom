@@ -1,3 +1,5 @@
+import * as cnt from '../../actions/constants';
+
 const initialState = {
     title: 'Filters',
     brands: [
@@ -11,9 +13,14 @@ const initialState = {
 };
 
 export const filters = (state = initialState, action ) => {
-    const {type} = action;
+    const {type, payload} = action;
 
     switch (type) {
+        case cnt.BRAND_TOGGLE:
+            return {
+                ...state,
+                brands: payload
+            };
         default:
             return state;
     }
