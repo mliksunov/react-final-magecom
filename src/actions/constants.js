@@ -1,1 +1,3 @@
 export const BRAND_TOGGLE = 'BRAND_TOGGLE';
+export const CHANGE_PRICE = 'CHANGE_PRICE';
+export const FILTERING_REQUEST = 'FILTERING_REQUEST';

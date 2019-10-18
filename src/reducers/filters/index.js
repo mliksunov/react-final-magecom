@@ -7,9 +7,19 @@ const initialState = {
         {id: 2, name: 'Apple', isActive: true},
         {id: 3, name: 'Bose', isActive: false},
         {id: 4, name: 'Dell', isActive: false},
-        {id: 5, name: 'Huawei', isActive: false},
-        {id: 6, name: 'Alpine', isActive: false},
-    ]
+        {id: 5, name: 'LG', isActive: false},
+        {id: 6, name: 'Samsung', isActive: false},
+        {id: 7, name: 'Huawei', isActive: false},
+        {id: 8, name: 'HP', isActive: false},
+    ],
+    price: {
+        minValue: 0,
+        maxValue: 100,
+        range: {
+            min: 28,
+            max: 73
+        }
+    }
 };
 
 export const filters = (state = initialState, action ) => {
@@ -20,6 +30,18 @@ export const filters = (state = initialState, action ) => {
             return {
                 ...state,
                 brands: payload
+            };
+        case cnt.CHANGE_PRICE:
+            return {
+                ...state,
+                price: {
+                    ...state.price,
+                    range: payload
+                }
+            };
+        case cnt.FILTERING_REQUEST:
+            return {
+                ...state
             };
         default:
             return state;

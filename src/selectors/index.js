@@ -5,6 +5,16 @@ export const filters = createSelector(
     filters => filters
 );
 
+export const price = createSelector(
+    filters,
+    filters => filters.price
+);
+
+export const priceRange = createSelector(
+    filters,
+    filters => filters.price.range
+);
+
 export const brands = createSelector(
     filters,
     filters => filters.brands
